@@ -2,11 +2,39 @@
 	"name": "@beyond-js/equal",
 	"author": "BeyondJS",
 	"email": "hello@beyondjs.com",
-	"version": "1.0.1",
+	"version": "1.0.2",
 	"license": "MIT",
 	"repository": "https://github.com/beyondjs/equal",
 	"modules": {
 		"path": "modules"
 	},
-	"dependencies": {}
+	"deployment": {
+		"distributions": [
+			{
+				"name": "web",
+				"platform": "web",
+				"environment": "local",
+				"ports": {
+					"bundles": 1111
+				}
+			},
+			{
+				"name": "node",
+				"platform": "node",
+				"environment": "local",
+				"ports": {
+					"bundles": 1331
+				},
+				"ts": {
+					"compiler": "tsc"
+				}
+			}
+		]
+	},
+	"dependencies": {
+		"@beyond-js/kernel": "^0.1.12"
+	},
+	"devDependencies": {
+		"@types/node": "~20.14.8"
+	}
 }

@@ -1,6 +1,6 @@
-import generate from '.';
+import generate from './';
 
-export default function object(value) {
+export default function object(value: any): string {
 	let ordered = Object.entries(value);
 	ordered = ordered.sort((e0, e1) => (e0[0] > e1[0] ? 1 : -1));
 
