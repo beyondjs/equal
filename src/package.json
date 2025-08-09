@@ -4,7 +4,7 @@
 		"name": "BeyondJS",
 		"email": "hello@beyondjs.com"
 	},
-	"version": "1.0.2",
+	"version": "1.0.3",
 	"license": "MIT",
 	"repository": {
 		"type": "git",
@@ -35,16 +35,8 @@
 			}
 		]
 	},
-<<<<<<< HEAD
-	"dependencies": {
-		"@beyond-js/kernel": "^0.1.12"
-	},
-	"devDependencies": {
-		"@types/node": "~20.14.8"
-=======
 	"dependencies": {},
 	"devDependencies": {
 		"@beyond-js/local": "~0.1.3"
->>>>>>> feat/v1
 	}
 }
