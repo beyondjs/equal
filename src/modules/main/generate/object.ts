@@ -1,6 +1,10 @@
-import generate from './';
+import type mgenerate from './';
+declare const require: (module: string) => any;
 
-export default function object(value: any): string {
+export default function object(value: any) {
+	// Avoid cyclic reference of generate as generate imports this module
+	const generate = <typeof mgenerate>require('./');
+
 	let ordered = Object.entries(value);
 	ordered = ordered.sort((e0, e1) => (e0[0] > e1[0] ? 1 : -1));
 
