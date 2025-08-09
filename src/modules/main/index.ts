@@ -2,7 +2,7 @@ import array from './array';
 import object from './object';
 import generate from './generate';
 
-export /*bundle*/ const equal = function (v1, v2) {
+export /*bundle*/ const equal = function (v1: any, v2: any) {
 	if (typeof v1 !== typeof v2) return false;
 	if (typeof v1 !== 'object') return v1 === v2;
 
