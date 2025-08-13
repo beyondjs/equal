@@ -11,13 +11,6 @@ npm install @beyond-js/equal
 ## Usage
 
 ```javascript
-// Compare objects
-console.log(equal({ a: 1, b: 2 }, { b: 2, a: 1 })); // true
-console.log(equal({ a: 1, b: 2 }, { a: 1, b: 3 })); // false
-
-// Compare nested structures
-console.log(equal({ a: [1, { b: 2 }] }, { a: [1, { b: 2 }] })); // true
-
 const equal = require('@beyond-js/equal');
 
 // Compare primitive values
@@ -27,6 +20,13 @@ console.log(equal('a', 'b')); // false
 // Compare arrays
 console.log(equal([1, 2, 3], [1, 2, 3])); // true
 console.log(equal([1, 2, 3], [3, 2, 1])); // true
+
+// Compare objects
+console.log(equal({ a: 1, b: 2 }, { b: 2, a: 1 })); // true
+console.log(equal({ a: 1, b: 2 }, { a: 1, b: 3 })); // false
+
+// Compare nested structures
+console.log(equal({ a: [1, { b: 2 }] }, { [{ b: 2 }, 1], a })); // true
 ```
 
 ## API
