@@ -9,10 +9,11 @@ declare const require: (module: string) => any;
  */
 export default function array(value: Array<any>): string {
 	// Avoid cyclic reference of generate as generate imports this module
-	const generate = <typeof mgenerate>require('./');
+	const generate = <typeof mgenerate>require('./').default;
 
 	if (!(value instanceof Array)) throw new Error('Parameter must be an array');
 
 	const output = value.map((item: any) => generate(item));
-	return JSON.stringify(output.sort());
+	const stringified = JSON.stringify(output.sort());
+	return stringified.replace(/\\"/g, '"');
 }
